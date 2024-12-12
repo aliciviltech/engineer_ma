@@ -1,5 +1,7 @@
 import React from 'react'
 import './Hero.css'
+import 'animate.css';
+
 
 const Hero = () => {
   return (
