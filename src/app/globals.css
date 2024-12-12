@@ -1,27 +1,52 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@font-face {
+  font-family: 'poppins';
+  src: url('/fonts/Poppins/Poppins-Light.ttf');
+}
+:root{
+  --primaryColor: #00bed0;
+  --primaryTextColor: #757575;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "poppins";
+}
+.headingH1{
+  font-size: 30px;
+}
+.headingH2{
+  font-size: 25px;
+  color: var(--primaryColor);
+}
+.headingH3{
+  font-size: 18px;
+  color: var(--primaryColor);
+}
+.paragraphP2{
+  color: var(--primaryTextColor);
+}
+.paragraphP3{
+  color: var(--primaryTextColor);
+  font-size: 14px;
+}
+.sectionTitle{
+  text-align: center;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+
+.Home{
+  display: flex;
+}
+@media screen and (max-width:1024px) {
+  .Home{
+    display: block;
   }
 }

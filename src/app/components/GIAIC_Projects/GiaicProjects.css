@@ -1,0 +1,77 @@
+.GiaicProjects{
+    padding: 50px 0;
+    min-height: 100vh;
+    background-color: black;
+    color: #fff;
+}
+.GiaicProjects .sectionTitle p{
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+}
+.GiaicProjects .projectsContainer{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.GiaicProjects .projectsContainer .projectCard{
+    width: 30%;
+    height: 300px;
+    box-shadow: 0 0 10px rgba(128, 128, 128, 0.377);
+    position: relative;
+    cursor: pointer;
+}
+.GiaicProjects .projectsContainer .projectCard:hover .cornerShape{
+    background-color: var(--primaryColor);
+}
+.GiaicProjects .projectsContainer .projectCard .cornerShape{
+    width: 50px;
+    height: 50px;
+    border-bottom-left-radius: 20px;
+    background-color: #fff;
+    color: #000;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.GiaicProjects .projectsContainer .projectCard .image{
+    width: 100%;
+    height: 200px;
+}
+.GiaicProjects .projectsContainer .projectCard .image img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.GiaicProjects .projectsContainer .projectCard .text{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+@media screen and (max-width:1024px) {
+    .GiaicProjects{
+        min-height: unset;
+    }
+    .GiaicProjects .projectsContainer{
+        gap: 50px;
+    }
+    .GiaicProjects .projectsContainer .projectCard{
+        width: 35%;
+    }
+}
+@media screen and (max-width:1024px) {
+    .GiaicProjects .projectsContainer{
+        gap: 50px;
+    }
+    .GiaicProjects .projectsContainer .projectCard{
+        width: 90%;
+    }
+}

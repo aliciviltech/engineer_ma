@@ -1,0 +1,66 @@
+.Skills{
+    min-height: 100vh;
+    max-height: fit-content;
+    padding: 50px 10px;
+    background-image: url('https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-position: center;
+    background-blend-mode: color;
+    background-color: rgba(0, 0, 0, 0.367);
+    background-attachment: fixed;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.Skills .skillsList {
+    max-height: 80vh;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.Skills .skillsList .skill{
+    width: 150px;
+    height: 150px;
+    background-color: rgba(246, 246, 246, 0.091);
+    backdrop-filter: blur(10px);
+    /* border: 1px solid #fff; */
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    color: #bdb2b2;
+}
+
+.Skills .skillsList .skill img{
+    width: 40px;
+}
+
+@media screen and (max-width:1024px) {
+    .Skills{
+        min-height: unset;
+        max-height: unset;
+    }
+    .Skills .skillsList {
+        max-height: unset;
+        width: 95%;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .Skills .skillsList .skill{
+        width: 30vw;
+        height: 30vw;
+        gap: 10px;
+        font-size: clamp(12px, 5vw, 16px);
+    }
+    .Skills .skillsList .skill img{
+        width: 10vw;
+    }
+}
