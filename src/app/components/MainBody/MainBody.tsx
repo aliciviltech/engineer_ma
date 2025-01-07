@@ -3,7 +3,6 @@ import './MainBody.css'
 import Hero from '../Hero/Hero'
 import About from '../About/About'
 import CurrentProject from '../CurrentProjects/CurrentProject'
-import GiaicProjects from '../GIAIC_Projects/GiaicProjects'
 import Skills from '../Skills/Skills'
 import AllProjects from '../AllProjects/AllProjects'
 

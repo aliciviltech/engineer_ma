@@ -20,7 +20,7 @@ const CurrentProject = () => {
                 <div className="content">
                     <div className="leftCol">
                         <div className="currentProjectTitle headingH2">Blog Website</div>
-                        <div className="description">This is being created with the help of "firebase", using HTML, CSS and JavaScript. It is a user friendly. A user can read blogs just by landing on the website. If any one wants to create a blog he has to signup through firebase authentication system which is a very easy process. After creating a blog user can read, edit or delete his blog, whenever he wants.</div>
+                        <div className="description">This is being created with the help of {`"firebase"`}, using HTML, CSS and JavaScript. It is a user friendly. A user can read blogs just by landing on the website. If any one wants to create a blog he has to signup through firebase authentication system which is a very easy process. After creating a blog user can read, edit or delete his blog, whenever he wants.</div>
                         <PrimaryButton text='Visit' bgColor='var(--primaryColor)' textColor='white' />
                     </div>
                     <div className="rightCol">

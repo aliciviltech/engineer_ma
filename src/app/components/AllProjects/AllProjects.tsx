@@ -76,7 +76,7 @@ const AllProjects = () => {
                     filteredValues.length>0 &&
                     <div className="selectedFilters flex flex-wrap gap-2">
                         {
-                            filteredValues.map(value=> <p className='border border-[var(--primaryColor)] rounded-3xl px-4'>{value}</p> )   
+                            filteredValues.map((value, index)=> <p key={index} className='border border-[var(--primaryColor)] rounded-3xl px-4'>{value}</p> )   
                         }
                         <p className='border border-red-700 rounded-3xl px-4 cursor-pointer' onClick={removeFilters}> <i className='fa-solid fa-close'></i> remove all filters</p>       
                     </div>

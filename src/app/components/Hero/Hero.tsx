@@ -8,7 +8,7 @@ const Hero = () => {
     <div className='Hero' id='heroSection'>
       <h1 >
         Hello!<br />
-        I'm <span>Muhammad Ali</span>
+        {`I'm`} <span>Muhammad Ali</span>
       </h1>
       <h3>
         <i className='fa-solid fa-quote-left'></i> 
