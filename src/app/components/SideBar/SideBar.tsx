@@ -46,7 +46,7 @@ const SideBar = () => {
                     <Link href={'#skillsSection'} className='navLink'><i className='fa-solid fa-book'></i> {expandSideBar && "Skills"}</Link>
                     <Link href={'#currentProjectSection'} className='navLink'>  <i className='fa-solid fa-spinner'></i>{expandSideBar && "Current Project"}</Link>
                     <Link href={'#GiaicProjectsSection'} className='navLink'>  <img src="/images/icons/giaic.png"  />{expandSideBar && "GIAIC Projects"}</Link>
-                    <Link href={'#'} className='navLink'> <i className='fa-solid fa-briefcase'></i>{expandSideBar && "All Projects"}</Link>
+                    <Link href={'#AllProjectsSection'} className='navLink'> <i className='fa-solid fa-briefcase'></i>{expandSideBar && "All Projects"}</Link>
                     <Link href={'#'} className='navLink'><i className='fa-solid fa-comment'></i>{expandSideBar && "Feedback"}</Link>
                     <Link href={'#'} className='navLink'> <i className='fa-solid fa-linkedin'></i>{expandSideBar && "Go to LinkedIn"}</Link>
                 </div>

@@ -1,35 +1,54 @@
-.GiaicProjects{
+.AllProjects{
     padding: 50px 0;
     min-height: 100vh;
     background-color: black;
     color: #fff;
 }
-.GiaicProjects .sectionTitle p{
+.AllProjects .filterView{
+    padding: 0 50px;
+}
+.AllProjects .filterView .filterButton{
+    cursor: pointer;
+}
+.AllProjects .filterView .filterOptions{
+    display: flex;
+    gap: 50px;
+    /* padding: 20px; */
+    /* padding-bottom: 40px; */
+    position: relative;
+}
+/* .AllProjects .filterView .applyFilter{
+    position:absolute;
+    right: 10px;
+    bottom: 10px;
+} */
+.AllProjects .sectionTitle p{
     width: 90%;
     margin: auto;
     margin-top: 20px;
 }
-.GiaicProjects .projectsContainer{
+.AllProjects .projectsContainer{
     margin-top: 50px;
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
     flex-wrap: wrap;
     padding: 20px;
 }
 
-.GiaicProjects .projectsContainer .projectCard{
+.AllProjects .projectsContainer .projectCard{
     width: 300px;
     box-shadow: 0 0 10px rgba(128, 128, 128, 0.377);
     position: relative;
     cursor: pointer;
     padding: 10px;
     border-radius: 5px;
+    height: 100%;
 }
-.GiaicProjects .projectsContainer .projectCard:hover .cornerShape{
+.AllProjects .projectsContainer .projectCard:hover .cornerShape{
     background-color: var(--primaryColor);
 }
-.GiaicProjects .projectsContainer .projectCard .cornerShape{
+.AllProjects .projectsContainer .projectCard .cornerShape{
     width: 50px;
     height: 50px;
     border-bottom-left-radius: 20px;
@@ -42,18 +61,19 @@
     justify-content: center;
     align-items: center;
 }
-.GiaicProjects .projectsContainer .projectCard .image{
+.AllProjects .projectsContainer .projectCard .image{
     width: 100%;
     height: 200px;
+
 }
-.GiaicProjects .projectsContainer .projectCard .image img{
+.AllProjects .projectsContainer .projectCard .image img{
     width: 100%;
     height: 100%;
     object-fit: contain;
     object-position: top;
     border-radius: 5px;
 }
-.GiaicProjects .projectsContainer .projectCard .text{
+.AllProjects .projectsContainer .projectCard .text{
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -61,19 +81,19 @@
 }
 
 @media screen and (max-width:1024px) {
-    .GiaicProjects{
+    .AllProjects{
         min-height: unset;
     }
-    .GiaicProjects .projectsContainer{
+    .AllProjects .projectsContainer{
         gap: 50px;
         padding: 20px;
     }
-    .GiaicProjects .projectsContainer .projectCard{
+    .AllProjects .projectsContainer .projectCard{
         width: 300px;
     }
 }
-@media screen and (max-width:1024px) {
-    .GiaicProjects .projectsContainer{
+@media screen and (max-width:600px) {
+    .AllProjects .projectsContainer{
         gap: 50px;
     }
     .AllProjects .projectsContainer .projectCard{
