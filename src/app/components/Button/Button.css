@@ -2,15 +2,15 @@
     width: fit-content;
     padding: 7px 40px;
     text-align: center;
-    font-size: 16px;
+    font-size: 14px;
     border-radius: 5px;
     cursor: pointer;
     position: relative;
     z-index: 1;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 640px) {
     .PrimaryButton{
-        width: 90%;
+        width: 100%;
     }
 }

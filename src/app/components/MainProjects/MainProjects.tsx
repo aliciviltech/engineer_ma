@@ -1,15 +1,15 @@
 import React, { useState } from 'react'
-import './AllProjects.css'
+import './MainProjects.css'
 import { AllProjectsData, ProjectInterface } from '@/AllProjectsData/AllProjectsData'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useForm, SubmitHandler } from "react-hook-form"
-import FitButton from '../Button/FitButton'
 
 
-const AllProjects = ({toggleAllProjects}:{toggleAllProjects?:()=>void}) => {
+const MainProjects = ({toggleAllProjects}:{toggleAllProjects?:()=>void}) => {
 
-    const [displayProjects, setDisplayProjects] = useState(AllProjectsData)
+    const projectDisplayCount = 6;
+    const [displayProjects, setDisplayProjects] = useState(AllProjectsData.slice(0,projectDisplayCount))
     const [toggleFilter, setToggleFilter] = useState(false);
     const [filteredValues,setFilteredValues] =  useState<string[]>([]);
 
@@ -49,25 +49,24 @@ const AllProjects = ({toggleAllProjects}:{toggleAllProjects?:()=>void}) => {
                 })
             })
             const uniqueProjects: ProjectInterface[] = [...new Set(finalProjects)]
-            setDisplayProjects(uniqueProjects)
+            setDisplayProjects(uniqueProjects.slice(0,projectDisplayCount))
         } else{
-            setDisplayProjects(AllProjectsData)
+            setDisplayProjects(AllProjectsData.slice(0,projectDisplayCount))
         }
         setToggleFilter(false)
     }
 
     const removeFilters = ()=>{
-        setDisplayProjects(AllProjectsData)
+        setDisplayProjects(AllProjectsData.slice(0,projectDisplayCount))
         setToggleFilter(false)
         setFilteredValues([])
     }
 
     return (
-        <div className='AllProjects' id='AllProjectsSection'>
-            <div className="backBtn ml-6 w-fit" onClick={toggleAllProjects}> <FitButton text='Back'/> </div>
+        <div className='MainProjects' id='MainProjectsSection'>
             <div className="sectionTitle">
-                <h1 className='headingH1'>All Projects</h1>
-                <p className='paragraphP2'>All projects are displayed which were made as Freelance Projects / Practice Project and Institute Projects.</p>
+                <h1 className='headingH1'>Main Projects</h1>
+                <p className='paragraphP2'>Main projects are displayed which were made as Freelance Projects / Practice Project and Institute Projects.</p>
             </div>
 
             {/* ======================== filter form ====================== */}
@@ -140,6 +139,7 @@ const AllProjects = ({toggleAllProjects}:{toggleAllProjects?:()=>void}) => {
 
             </div>
 
+            <h1 className='headingH1 text-center border-b border-white w-fit self-center cursor-pointer hover:text-[var(--primaryColor)]' onClick={toggleAllProjects}>See More</h1>
 
 
 
@@ -147,4 +147,4 @@ const AllProjects = ({toggleAllProjects}:{toggleAllProjects?:()=>void}) => {
     )
 }
 
-export default AllProjects
+export default MainProjects

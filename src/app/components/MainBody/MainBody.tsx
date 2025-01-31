@@ -4,9 +4,12 @@ import Hero from '../Hero/Hero'
 import About from '../About/About'
 import CurrentProject from '../CurrentProjects/CurrentProject'
 import Skills from '../Skills/Skills'
-import AllProjects from '../AllProjects/AllProjects'
+import Feedback from '../Feedback/Feedback'
+import Weather from '../Weather/Weather'
+import Footer from '../Footer/Footer'
+import MainProjects from '../MainProjects/MainProjects'
 
-const MainBody = () => {
+const MainBody = ({toggleAllProjects}:{toggleAllProjects:()=>void}) => {
   const [moveTopBtn, setMoveTopBtn] = useState(false);
 
   useEffect(() => {
@@ -24,14 +27,19 @@ const MainBody = () => {
       <Hero />
       <About />
       <Skills />
+      <Weather/>
       <CurrentProject />
-      <AllProjects />
+      <MainProjects toggleAllProjects={toggleAllProjects}/>
+      <Feedback/>
+      <Footer/>
       {
         moveTopBtn &&
         <div className="moveToTop" onClick={() => { window.scrollTo({ top: 0 }) }}>
           <i className='fa-solid fa-angle-up'></i>
         </div>
       }
+
+      
     </div>
   )
 }

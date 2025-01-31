@@ -19,11 +19,11 @@ const Skills = () => {
                     CSS 
                 </div>
                 <div className="skill">
-                    <img src="/images/icons/javascript.png" alt="" />
+                    <img src="/images/icons/javascript_logo.png" alt="" />
                     JavaScript 
                 </div>
                 <div className="skill">
-                    <img src="/images/icons/reactjs.png" alt="" />
+                    <img src="/images/icons/reactjs_logo.png" alt="" />
                     React.JS 
                 </div>
                 <div className="skill">
@@ -39,8 +39,8 @@ const Skills = () => {
                     Firebase 
                 </div>
                 <div className="skill">
-                    <img src="/images/icons/mysql.png" alt="" />
-                    MySQL 
+                    <img src="/images/icons/mongodb_icon.png" alt="" />
+                    MongoDB
                 </div>
             </div>
 

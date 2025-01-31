@@ -45,7 +45,7 @@ export const  AllProjectsData = [
         title: 'Saylani(SMIT) Form',
         description: 'Saylani SMIT Form - Fill admission form, download id card, check results.',
         skillsApplied: 'Firebase, JavaScript, HTML, CSS',
-        image: '/images/projects/smitFormFirebase.png',
+        image: '/images/projects/smitFormFirebase.PNG',
         link: 'smit_firebase/index.html'
     },
     {
@@ -118,7 +118,7 @@ export const  AllProjectsData = [
         title: 'PET VET',
         description: 'PET VET - A Pet Care Website.',
         skillsApplied: 'HTML, CSS',
-        image: '/images/projects/petVet.png',
+        image: '/images/projects/petVet.PNG',
         link: 'PetVet/index.html'
     },
     
@@ -138,7 +138,7 @@ export const  AllProjectsData = [
         title: 'Real Estate Website',
         description: 'Real Estate Website helps you to Manage Your Property with Ease.',
         skillsApplied: 'HTML, CSS, JavaScript',
-        image: '/images/projects/realEstate.png',
+        image: '/images/projects/realEstate.PNG',
         link: 'RealEstateFigma/index.html'
     },
     {
@@ -147,7 +147,7 @@ export const  AllProjectsData = [
         title: 'OLX Clone',
         description: 'OLX Website Clone. It\'s a Pakistani e-commerce website.',
         skillsApplied: 'HTML, CSS, JavaScript, clone',
-        image: '/images/projects/olx.png',
+        image: '/images/projects/olx.PNG',
         link: 'olx-clone/index.html'
     }
 

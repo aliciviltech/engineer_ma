@@ -18,6 +18,9 @@
   scroll-behavior: smooth;
   font-family: "poppins";
 }
+.btnTxt1{
+  font-size: 14px;
+}
 .headingH1{
   font-size: 30px;
 }
