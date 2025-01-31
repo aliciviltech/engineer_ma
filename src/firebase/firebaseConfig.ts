@@ -38,7 +38,6 @@ export type CommentDataType = {
 const authStateCheck = (setUser:(user:User|null)=>void) => {
   onAuthStateChanged(auth, (user) => {
     if (user) {
-      const uid = user.uid;
       console.log('auth state: logged in', user)
       setUser(user)
     } else {
