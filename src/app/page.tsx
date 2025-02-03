@@ -4,8 +4,6 @@ import MainBody from "./components/MainBody/MainBody";
 import { useEffect, useRef, useState } from "react";
 import AllProjects from "./components/AllProjects/AllProjects";
 import Image from "next/image";
-import { Provider } from "react-redux";
-import store from "./redux/store/store";
 
 
 export default function Home() {
@@ -62,7 +60,7 @@ export default function Home() {
   return (
     <div className="Home" >
       <div className="sideBar" >
-        <SideBar drawerRef={drawerRef} showNav={showNav} handleMenuDrawer={handleMenuDrawer} toggleHomePage={toggleHomePage} toggleDark={toggleDark} />
+        <SideBar drawerRef={drawerRef} showNav={showNav} handleMenuDrawer={handleMenuDrawer} toggleHomePage={toggleHomePage} />
       </div>
       {
         toggleProjects ?
