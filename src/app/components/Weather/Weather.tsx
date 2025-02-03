@@ -1,5 +1,8 @@
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react'
+import DropLoader from '../Loaders/DropLoader/DropLoader';
+
+
 
 
 
@@ -11,36 +14,36 @@ interface WeatherDataType {
     dt: number;
     id: number;
     main: {
-      temp: number;
-      feels_like: number;
-      temp_min: number;
-      temp_max: number;
-      pressure: number;
-      humidity: number;
+        temp: number;
+        feels_like: number;
+        temp_min: number;
+        temp_max: number;
+        pressure: number;
+        humidity: number;
     };
     name: string;
     sys: {
-      type: number;
-      id: number;
-      country: string;
-      sunrise: number;
-      sunset: number;
+        type: number;
+        id: number;
+        country: string;
+        sunrise: number;
+        sunset: number;
     };
     timezone: number;
     visibility: number;
     weather: Array<{
-      id: number;
-      main: string;
-      description: string;
-      icon: string;
+        id: number;
+        main: string;
+        description: string;
+        icon: string;
     }>;
     wind: {
-      speed: number;
-      deg: number;
-      gust?: number; // gust may be absent
+        speed: number;
+        deg: number;
+        gust?: number; // gust may be absent
     };
-  }
-  
+}
+
 
 
 
@@ -57,7 +60,7 @@ const Weather = () => {
             const extractTimeNow = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
             setTimeNow(extractTimeNow);
         }, 1000); // Update every second
-    
+
         return () => clearInterval(interval); // Cleanup on unmount
     }, []);
     console.log(dayNames[todayNumber])
@@ -71,7 +74,7 @@ const Weather = () => {
                 return data
             })
     }
-
+    
     useEffect(() => {
         const cities = ['karachi', 'lahore', 'islamabad', 'queta', 'peshawar'];
         Promise.all(cities.map(fetchWeather))
@@ -83,61 +86,71 @@ const Weather = () => {
     // console.log(allWeatherData)
 
     return (
-        <div className='Weather  
+        <div className='Weather min-h-screen sm:min-h-[unset] xl:min-h-screen
         bg-[url("https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_1280.jpg")]
         bg-no-repeat bg-cover bg-bottom bg-blend-color bg-black/50
-        min-h-[50vh] sm:h-fit py-12 px-6 flex gap-6'>
+         py-12 px-6 flex gap-6 justify-center '>
 
             {/* left side */}
-            <div className="leftSide relative  text-white w-full xl:w-1/2 flex flex-col justify-between gap-10">
-                <div className="icon w-full h-full sm:absolute text-[60px] text-center flex justify-center items-center">
-                    <div className='flex flex-col items-center justify-center '>
-                    <Image className='w-32 h-32' src={`/images/weather/${weatherData[0]?.weather[0].icon}.png`} alt='icon' width={300} height={300} />
-                    <p className='text-[22px]'>{weatherData[0]?.weather[0].main}</p>
+            {
+                weatherData.length > 0
+                ?
+                <div className="leftSide relative text-white w-full xl:w-1/2 flex flex-col justify-evenly sm:justify-between gap-10">
+                    <div className="icon w-full sm:h-full sm:absolute text-[60px] text-center flex justify-center items-center">
+                        <div className='flex flex-col items-center justify-center '>
+                            <Image className='w-32 h-32' src={`/images/weather/${weatherData[0]?.weather[0].icon}.png`} alt='icon' width={300} height={300} />
+                            <p className='text-[22px]'>{weatherData[0]?.weather[0].main}</p>
+                        </div>
                     </div>
-                </div>
-                <div className="today flex justify-between sm:items-center flex-col sm:flex-row gap-4">
-                    <div className="temperatureSide">
-                        <h1 className='text-[60px]'>{Math.round(weatherData[0]?.main.temp)}<sup className=''>o</sup>C</h1>
-                        <p>Precepitation: 2%</p>
-                        <p>Humidity: {weatherData[0]?.main.humidity}%</p>
-                        <p>Wind Speed: {weatherData[0]?.wind.speed}</p>
+                    <div className="today flex justify-between sm:items-center flex-col sm:flex-row gap-4">
+                        <div className="temperatureSide">
+                            <h1 className='text-[clamp(20px,20vw,60px)] sm:text-[60px]'>{Math.round(weatherData[0]?.main.temp)}<sup className=''>o</sup>C</h1>
+                            <p className='text-[clamp(16px,5vw,22px)] sm:text-sm'>Precepitation: 2%</p>
+                            <p className='text-[clamp(16px,5vw,22px)] sm:text-sm'>Humidity: {weatherData[0]?.main.humidity}%</p>
+                            <p className='text-[clamp(16px,5vw,22px)] sm:text-sm'>Wind Speed: {weatherData[0]?.wind.speed}</p>
+                        </div>
+
+                        <div className="location text-[clamp(16px,5vw,22px)] sm:text-sm">
+                            <p>{weatherData[0]?.name}, {weatherData[0]?.sys.country}</p>
+                            <p>{today}, {timeNow}</p>
+                        </div>
                     </div>
 
-                    <div className="location">
-                        <p>{weatherData[0]?.name}, {weatherData[0]?.sys.country}</p>
-                        <p>{today}, {timeNow}</p>
+                    <div className="predictions hidden sm:flex jusstify-between gap-2">
+                        {
+                            [1, 2, 3, 4, 5, 6, 7].map((day, index: number) => {
+                                return (
+                                    <div key={index} className="day py-4 px-2 flex-1 rounded-lg text-[14px] flex flex-col bg-black/50 backdrop-blur-lg gap-2 items-center">
+                                        <h1>Tue</h1>
+                                        <div className="icon">ICON</div>
+                                        <p>30 <sup>o</sup> c</p>
+                                    </div>
+                                )
+                            })
+                        }
                     </div>
                 </div>
+                :
+            <div className='xl:w-1/2 flex items-center'>
 
-                <div className="predictions hidden sm:flex jusstify-between gap-2">
-                    {
-                        [1, 2, 3, 4, 5, 6, 7].map((day,index:number) => {
-                            return (
-                                <div key={index} className="day py-4 px-2 flex-1 rounded-lg text-[14px] flex flex-col bg-black/50 backdrop-blur-lg gap-2 items-center">
-                                    <h1>Tue</h1>
-                                    <div className="icon">ICON</div>
-                                    <p>30 <sup>o</sup> c</p>
-                                </div>
-                            )
-                        })
-                    }
-                </div>
+                <DropLoader/>
             </div>
+            }
+
 
             {/* right side */}
-            <div className="rightSide text-white text-[1vmin] w-fit justify-end xl:w-1/2 flex flex-wrap gap-2">
+            <div className="rightSide hidden text-white text-[1vmin] w-fit justify-end xl:w-1/2 sm:flex flex-wrap gap-2">
 
-                {
-                    weatherData?.slice(1, 5).map((weather:WeatherDataType, index:number) => {
+                {   weatherData.length > 0 ?
+                    weatherData?.slice(1, 5).map((weather: WeatherDataType, index: number) => {
                         return (
                             <div key={index} className={`city1 
-                            ${index === 0 ? 'hidden sm:flex bg-gradient-to-r from-cyan-500/50 to-blue-500/50': 
-                            index === 1 ? 'hidden sm:flex bg-gradient-to-r from-green-300/50 to-green-700/50':
-                            index === 2 ? 'hidden xl:flex bg-gradient-to-r from-violet-500/50 to-fuchsia-500/50':
-                            'hidden xl:flex bg-gradient-to-r from-red-400/50 to-red-700/50'
-                            }
-                            flex flex-col gap-10 rounded-lg w-full xl:w-[48%] h-1/2 py-8 px-6`}
+                            ${index === 0 ? 'hidden sm:flex bg-gradient-to-r from-cyan-500/50 to-blue-500/50' :
+                                    index === 1 ? 'hidden sm:flex bg-gradient-to-r from-green-300/50 to-green-700/50' :
+                                        index === 2 ? 'hidden xl:flex bg-gradient-to-r from-violet-500/50 to-fuchsia-500/50' :
+                                            'hidden xl:flex bg-gradient-to-r from-red-400/50 to-red-700/50'
+                                }
+                            flex flex-col justify-center gap-10 rounded-lg w-full xl:w-[48%] h-1/2 py-8 px-6 `}
                             >
                                 <div className="row1 text-[1.7vmin] flex justify-between">
                                     <div className="humiditySide">
@@ -160,6 +173,8 @@ const Weather = () => {
                             </div>
                         )
                     })
+                    :
+                    <DropLoader/>
                 }
 
             </div>

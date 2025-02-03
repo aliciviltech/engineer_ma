@@ -27,12 +27,20 @@ const Skills = () => {
                     React.JS 
                 </div>
                 <div className="skill">
+                    <img src="/images/icons/react_redux.png" alt="" />
+                    React Redux 
+                </div>
+                <div className="skill">
                     <img src="/images/icons/nextjs.png" alt="" />
                     Next.JS 
                 </div>
                 <div className="skill">
                     <img src="/images/icons/typescript.png" alt="" />
                     TypeScript 
+                </div>
+                <div className="skill">
+                    <img src="/images/icons/nodejs.png" alt="" />
+                    NodeJS
                 </div>
                 <div className="skill">
                     <img src="/images/icons/firebase.png" alt="" />

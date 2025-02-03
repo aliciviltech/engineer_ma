@@ -1,0 +1,6 @@
+input, select{
+    border: 1px solid gray;
+    border-radius: 5px;
+    width: 100%;
+    padding: 2px 10px;
+}

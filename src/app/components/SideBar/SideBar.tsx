@@ -1,13 +1,37 @@
-import React, { LegacyRef, useState } from 'react'
+'use client'
+import React, { LegacyRef, useEffect, useState } from 'react'
 import './SideBar.css'
 import Link from 'next/link'
+import { authStateCheck } from '@/firebase/firebaseConfig'
+import { User } from 'firebase/auth'
 
-const SideBar = ({ drawerRef, showNav, handleMenuDrawer, toggleHomePage }: { drawerRef: LegacyRef<HTMLDivElement> | undefined, showNav: boolean, handleMenuDrawer: () => void, toggleHomePage: () => void }) => {
+interface SideBarProps {
+    drawerRef: LegacyRef<HTMLDivElement> | undefined,
+    showNav: boolean,
+    handleMenuDrawer: () => void,
+    toggleHomePage: () => void,
+}
+
+
+const SideBar: React.FC<SideBarProps> = ({ drawerRef, showNav, handleMenuDrawer, toggleHomePage }) => {
     const [expandSideBar, setExpandSideBar] = useState(true);
     const handleMenuLink = () => {
         handleMenuDrawer();
         toggleHomePage();
     }
+
+
+    //=============== check auth login status =================
+    const [user, setUser] = useState<User | null>(null);
+    const checkUser = () => {
+        authStateCheck(setUser)
+    }
+    useEffect(() => {
+        checkUser()
+    }, [])
+
+
+
     return (
         <div className={`SideBar ${expandSideBar ? "wideSideBar" : "narrowSideBar"} `}>
 
@@ -56,6 +80,10 @@ const SideBar = ({ drawerRef, showNav, handleMenuDrawer, toggleHomePage }: { dra
                     <Link href={'#MainProjectsSection'} className='navLink' onClick={handleMenuLink}> <i className='fa-solid fa-briefcase'></i>{expandSideBar && "Main Projects"}</Link>
                     <Link href={'#FeedbackSection'} className='navLink' onClick={handleMenuLink}><i className='fa-solid fa-comment'></i>{expandSideBar && "Feedback"}</Link>
                     <Link href={'https://www.linkedin.com/in/muhammad-ali-2b31662b0/'} target='_blank' className='navLink' > <i className='fa-brands fa-linkedin'></i>{expandSideBar && "Go to LinkedIn"}</Link>
+                    {
+                        user?.uid == 'cWmylgFH80OAUpM4tRdNbmHlMny1' &&
+                    <Link href={'/components/pages/edit-projects'} target='_blank' className='navLink' > <i className='fa-solid fa-pen'></i>{expandSideBar && "Edit Projects"}</Link>
+                    }    
                 </div>
             </div>
         </div >

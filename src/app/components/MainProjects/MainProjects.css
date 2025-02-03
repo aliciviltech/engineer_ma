@@ -1,10 +1,13 @@
 .MainProjects{
     padding: 50px 0;
     min-height: 100vh;
-    background-color: black;
-    color: #fff;
     display: flex;
     flex-direction: column;
+    background-color: var(--lightBg);
+}
+.dark .MainProjects{
+    background-color: black;
+    color: #fff;
 }
 .MainProjects .filterView{
     padding: 0 50px;
@@ -45,10 +48,14 @@
     cursor: pointer;
     padding: 10px;
     border-radius: 5px;
-    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
+
 .MainProjects .projectsContainer .projectCard:hover .cornerShape{
     background-color: var(--primaryColor);
+    color: #fff;
+    transition: 0.3s;
 }
 .MainProjects .projectsContainer .projectCard .cornerShape{
     width: 50px;
@@ -62,6 +69,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: 0.3s;
 }
 .MainProjects .projectsContainer .projectCard .image{
     width: 100%;

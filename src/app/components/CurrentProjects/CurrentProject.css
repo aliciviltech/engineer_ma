@@ -1,8 +1,11 @@
 .CurrentProject {
     min-height: 100vh;
+    padding: 50px 0;
+    background-color: var(--lightBg);
+}
+.dark .CurrentProject {
     background-color: rgb(0, 0, 0);
     color: #fff;
-    padding: 50px 0;
 }
 
 .CurrentProject .project {
@@ -10,12 +13,14 @@
     margin-top: 50px;
     width: 90%;
     /* min-height: 80vh; */
-    background-color: rgb(41, 41, 41);
+    background-color: var(--lightBg2);
     border-radius: 10px;
     position: relative;
     padding: 20px;
 }
-
+.dark .CurrentProject .project {
+    background-color: rgb(41, 41, 41);
+}
 .CurrentProject .project .border1 {
     border-top: 1px solid gray;
     border-bottom: 1px solid gray;
@@ -36,11 +41,14 @@
 }
 
 .CurrentProject .project .content {
-    background-color: rgb(10, 10, 10);
+    background-color: var(--lightBg);
     height: 100%;
     display: flex;
     gap: 20px;
 
+}
+.dark .CurrentProject .project .content {
+    background-color: rgb(10, 10, 10);
 }
 
 .CurrentProject .project .content .leftCol {

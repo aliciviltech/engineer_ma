@@ -8,7 +8,7 @@ const About = () => {
       </div>
 
       <div className="aboutFrame">
-      <div className="aboutText">
+      <div className="aboutText ">
         <h1>In Action</h1>
         <p>With a solid foundation in web development, I am creating dynamic and user-centric
           websites and applications. My experience spans across various technologies and frameworks,
@@ -22,7 +22,7 @@ const About = () => {
       </div>
 
       <div className="aboutFrame">
-      <div className="aboutText">
+      <div className="aboutText ">
       <h1>Future Drive</h1>
         <p>My goal is to pursue a career in web development with a focus on integrating AI techniques. As AI
               continues to reshape industries, I am committed to staying at the forefront of these

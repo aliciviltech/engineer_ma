@@ -5,6 +5,7 @@ import React, { ChangeEvent, useEffect, useState } from 'react'
 import { Carousel } from 'antd';
 import { authStateCheck, getAllCommentsDoc, signin, signout, submitComment,deleteComment, CommentsTypeFirebase, DocTypeFirebase } from '@/firebase/firebaseConfig';
 import { User } from 'firebase/auth'
+import ClassicLoader from '../Loaders/ClassicLoader/ClassicLoader';
 
 
 const Feedback = () => {
@@ -65,7 +66,7 @@ const Feedback = () => {
 
 
     return (
-        <div className='Feedback min-h-[100vh] py-12 bg-black text-white' id='FeedbackSection'>
+        <div className='Feedback min-h-[100vh] py-12 px-4 dark:bg-black dark:text-white' id='FeedbackSection'>
 
             {/* section title */}
             <div className="sectionTitle">
@@ -73,38 +74,40 @@ const Feedback = () => {
             </div>
 
             {/* input section */}
-            <div className="inputContainer w-[90%] md:w-[70%]  mx-auto mt-10 border border-[var(--primaryColor)] p-4 rounded-xl flex flex-col gap-4">
+            <div className="inputContainer w-[100%] text-white  bg-[#1d1d1d] md:w-[70%]  mx-auto mt-10  p-4 rounded-xl flex flex-col gap-4">
                 <div className="row1 flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-2">
                     <Image className='h-10 w-10 rounded-full' src={`${user ? user.photoURL : '/images/blank_profile_image.png'}`} alt='profileImage' width={100} height={100} />
-                    <input type="text" className='h-10 w-full sm:w-[90%] rounded-lg text-black px-4' maxLength={180} onChange={handleInput}/>
+                    <input type="text" className='h-10 w-full sm:w-[90%] rounded-lg border border-[var(--inputBorder)] text-black px-4' maxLength={180} onChange={handleInput}/>
                 </div>
                 <div className="letterCount text-right">
                     <p className='text-sm mt-[-5px]'>{letterCount}/180</p>
                 </div>
                 <div className="row2 flex flex-col sm:flex-row gap-3 items-center sm:justify-end">
 
-                    <button className={`logoutBtn btnTxt1 w-full sm:w-fit bg-[var(--primaryColor)] disabled:bg-gray-500 px-4 py-1 rounded-md`} disabled={user ? false : true} onClick={signout}>Logout</button>
+                    <button className={`logoutBtn btnTxt1 w-full sm:w-fit bg-[var(--primaryColor)] disabled:bg-gray-400 px-4 py-1 rounded-md`} disabled={user ? false : true} onClick={signout}>Logout</button>
 
-                    <button className={`googleBtn btnTxt1 w-full sm:w-fit bg-[var(--primaryColor)] disabled:bg-gray-500 px-4 py-1 rounded-md`} disabled={user ? true : false} onClick={signin}>Login with Google</button>
+                    <button className={`googleBtn btnTxt1 w-full sm:w-fit bg-[var(--primaryColor)] disabled:bg-gray-400 px-4 py-1 rounded-md`} disabled={user ? true : false} onClick={signin}>Login with Google</button>
 
-                    <button className={`submitBtn btnTxt1 w-full sm:w-fit bg-[var(--primaryColor)] disabled:bg-gray-500 px-4 py-1 rounded-md`} disabled={user ? false : true}
+                    <button className={`submitBtn btnTxt1 w-full sm:w-fit bg-[var(--primaryColor)] disabled:bg-gray-400 px-4 py-1 rounded-md`} disabled={user ? false : true}
                         onClick={submitData}>Submit</button>
                 </div>
             </div>
 
             {/* comments list  */}
-            <div className="commentsListSection pt-12 px-4">
-
-                <Carousel className='p-6' arrows infinite={false} slidesToShow={slidesToShow}>
+            <div className="commentsListSection pt-12 w-full ">
+{
+                    (allCommentsDoc as CommentsTypeFirebase)?.length>0 
+                    ?
+                <Carousel className='px-6 py-10' arrows infinite={false} slidesToShow={slidesToShow}>
                     {
                         allCommentsDoc?.map((doc:DocTypeFirebase, index:number) => {
                             return (
                                 <div key={index} className=''>
                                     <div className="itemContainer pt-2 sm:p-4 h-[270px]">
-                                        <div className='item relative border border-[var(--primaryColor)] rounded-sm text-white p-3 text-center h-full flex flex-col gap-4' >
-                                            <div className="header flex gap-4 items-center">
+                                        <div className='item relative bg-[#e6d9bc] text-black rounded-lg p-3 text-center h-full flex flex-col gap-4' >
+                                            <div className="header flex gap-4 items-center bg-[var(--primaryColor)] text-white p-2 rounded-[30px]">
                                                 <Image className='h-10 w-10 rounded-full' src={doc.data().userImageURL} alt='profileImage' width={100} height={100} />
-                                                <p className='font-bold'>{doc.data().userName}</p>
+                                                <p className=''>{doc.data().userName}</p>
                                             </div>
                                             <div className="commentText text-left">{doc.data().comment}</div>
                                             {
@@ -122,7 +125,10 @@ const Feedback = () => {
                             )
                         })
                     }   
-                </Carousel>
+                    </Carousel>
+                    :
+                    <ClassicLoader/>
+}
 
             </div>
         </div>

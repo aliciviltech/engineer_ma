@@ -5,7 +5,7 @@ import 'animate.css';
 
 const Hero = () => {
   return (
-    <div className='Hero' id='heroSection'>
+    <div className='Hero ' id='heroSection'>
       <h1 >
         Hello!<br />
         {`I'm`} <span>Muhammad Ali</span>

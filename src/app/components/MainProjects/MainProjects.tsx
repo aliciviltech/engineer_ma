@@ -117,8 +117,7 @@ const MainProjects = ({toggleAllProjects}:{toggleAllProjects?:()=>void}) => {
                 {
                     displayProjects.map((project) => {
                         return (
-                            <Link className='flex justify-center' key={project.id} href={project.link} target='_blank'>
-                                <div className="projectCard">
+                            <Link className='projectCard ' key={project.id} href={project.link} target='_blank'>
                                     <div className="cornerShape">
                                         <i className='fa-solid fa-up-right-from-square'></i>
                                     </div>
@@ -131,7 +130,6 @@ const MainProjects = ({toggleAllProjects}:{toggleAllProjects?:()=>void}) => {
                                             {project.description}
                                         </div>
                                     </div>
-                                </div>
                             </Link>
                         )
                     })
@@ -139,7 +137,7 @@ const MainProjects = ({toggleAllProjects}:{toggleAllProjects?:()=>void}) => {
 
             </div>
 
-            <h1 className='headingH1 text-center border-b border-white w-fit self-center cursor-pointer hover:text-[var(--primaryColor)]' onClick={toggleAllProjects}>See More</h1>
+            <h1 className='headingH1 text-center border-b border-black dark:border-white w-fit self-center cursor-pointer hover:text-[var(--primaryColor)]' onClick={toggleAllProjects}>See More</h1>
 
 
 

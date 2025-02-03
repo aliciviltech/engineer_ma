@@ -1,0 +1,16 @@
+.slick-arrow{
+    opacity: 1 !important;
+}
+.slick-arrow::after{
+    color: var(--primaryColor);
+}
+.slick-dots {
+    margin-top: 10px !important;
+}
+.slick-dots li button{
+    background-color: var(--primaryColor) !important ;
+    opacity: 0.4 !important;
+}
+.slick-dots .slick-active button{
+    opacity: 1 !important;
+}

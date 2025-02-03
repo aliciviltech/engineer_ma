@@ -219,7 +219,7 @@
         position: fixed;
         top: 0;
         border-bottom-right-radius: 20px;
-        border: 2px groove black;
+        /* border: 2px groove black; */
         display: flex;
         align-items: center;
         justify-content: center;

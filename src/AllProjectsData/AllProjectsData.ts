@@ -22,15 +22,6 @@ export const  AllProjectsData = [
         link: 'https://ma-resume-builder.vercel.app/',
     },
     {
-        id: 'BB14',
-        category:'website',
-        title: 'Baitul Blog',
-        description: 'Baitul Blog - Your Opinion Matters',
-        skillsApplied: 'Firebase, JavaScript, HTML, CSS',
-        image: '/images/projects/baitulBlog.png',
-        link: '../baitul_blog/index.html',
-    },
-    {
         id: 'IAS13',
         category:'website',
         title: 'INFONET App Store',
@@ -46,17 +37,18 @@ export const  AllProjectsData = [
         description: 'Saylani SMIT Form - Fill admission form, download id card, check results.',
         skillsApplied: 'Firebase, JavaScript, HTML, CSS',
         image: '/images/projects/smitFormFirebase.PNG',
-        link: 'smit_firebase/index.html'
+        link: 'https://67a07de0626973506201b19b--engineer-ma.netlify.app/'
     },
     {
-        id:'QW6',
-        category:'app',
-        title: 'QuizGrad WebApp',
-        description: 'Learn new concepts for each question',
-        skillsApplied: 'Figma, JavaScript, LocalStorage, HTML, CSS',
-        image: '/images/projects/quizGrade.png',
-        link: 'quiz_grad_figma/index.html'
+        id:'PV7',
+        category:'website',
+        title: 'PET VET',
+        description: 'PET VET - A Pet Care Website.',
+        skillsApplied: 'HTML, CSS',
+        image: '/images/projects/petVet.PNG',
+        link: 'https://petvet-five.vercel.app/'
     },
+    
     {
         id:'TMA5',
         category:'app',
@@ -64,7 +56,7 @@ export const  AllProjectsData = [
         description: 'Task Manager Mobile Application.',
         skillsApplied: 'HTML, CSS, JavaScript',
         image: '/images/projects/taskManager.png',
-        link: 'task-management-app/index.html'
+        link: 'https://task-manager-app-virid.vercel.app/'
     },
     {
         id:'YTC4',
@@ -73,26 +65,19 @@ export const  AllProjectsData = [
         description: 'Youtube Home Page Clone is Prepared.',
         skillsApplied: 'HTML, CSS, JavaScript, clone',
         image: '/images/projects/youtubeClone.png',
-        link: 'youtube_clone/index.html'
+        link: 'https://youtube-clone-alpha-weld.vercel.app/'
     },
+   
     {
-        id: 'SW11',
-        category:'website',
-        title: 'Smoothies Website',
-        description: 'Smoothies Website - Healthy and refreshing Diet',
-        skillsApplied: 'ReactJS, React-Modal',
-        image: '/images/projects/smoothies.png',
-        link: 'https://modal-smoothies.vercel.app/',
+        id:'QW6',
+        category:'app',
+        title: 'QuizGrad WebApp',
+        description: 'Learn new concepts for each question',
+        skillsApplied: 'Figma, JavaScript, LocalStorage, HTML, CSS',
+        image: '/images/projects/quizGrade.png',
+        link: 'https://67a08007f6d5d8889194c6b5--engineer-ma.netlify.app/'
     },
-    {
-        id: 'CWR10',
-        category:'website',
-        title: 'Cards With React',
-        description: 'Professinals Cards with ReactJS',
-        skillsApplied: 'ReactJS, React-Dynamic-Routing',
-        image: '/images/projects/cards_react.png',
-        link: 'https://cards-with-react-routing.vercel.app/',
-    },
+
     {
         id:'FDA9',
         category:'app',
@@ -100,7 +85,7 @@ export const  AllProjectsData = [
         description: 'Food Delivery App - Your Favorite Food Delivery Partner',
         skillsApplied: 'ReactJS, JavaScript, HTML, CSS',
         image: '/images/projects/foodDeliveryApp.png',
-        link: 'https://food-delivery-app-reactjs-weld.vercel.app/'
+        link: 'https://food-delivery-zd-weld.vercel.app/'
     },
     {
         id:'PWR8',
@@ -113,13 +98,13 @@ export const  AllProjectsData = [
     },
   
     {
-        id:'PV7',
+        id: 'SW11',
         category:'website',
-        title: 'PET VET',
-        description: 'PET VET - A Pet Care Website.',
-        skillsApplied: 'HTML, CSS',
-        image: '/images/projects/petVet.PNG',
-        link: 'PetVet/index.html'
+        title: 'Smoothies Website',
+        description: 'Smoothies Website - Healthy and refreshing Diet',
+        skillsApplied: 'ReactJS, React-Modal',
+        image: '/images/projects/smoothies.png',
+        link: 'https://modal-smoothies.vercel.app/',
     },
     
 
@@ -130,7 +115,18 @@ export const  AllProjectsData = [
         description: 'Learning platform of Generative Artificial Intelligence.',
         skillsApplied: 'HTML, CSS, JavaScript',
         image: '/images/projects/educationalWebsite.PNG',
-        link: 'learn_ai/index.html'
+        link: 'https://learn-ai-zeta.vercel.app/'
+    },
+
+        
+    {
+        id: 'CWR10',
+        category:'website',
+        title: 'Cards With React',
+        description: 'Professinals Cards with ReactJS',
+        skillsApplied: 'ReactJS, React-Dynamic-Routing',
+        image: '/images/projects/cards_react.png',
+        link: 'https://cards-with-react-routing.vercel.app/',
     },
     {
         id:'REW2',
@@ -139,16 +135,7 @@ export const  AllProjectsData = [
         description: 'Real Estate Website helps you to Manage Your Property with Ease.',
         skillsApplied: 'HTML, CSS, JavaScript',
         image: '/images/projects/realEstate.PNG',
-        link: 'RealEstateFigma/index.html'
-    },
-    {
-        id:'OC1',
-        category:'website',
-        title: 'OLX Clone',
-        description: 'OLX Website Clone. It\'s a Pakistani e-commerce website.',
-        skillsApplied: 'HTML, CSS, JavaScript, clone',
-        image: '/images/projects/olx.PNG',
-        link: 'olx-clone/index.html'
+        link: 'https://real-estate-website-tan-six.vercel.app/'
     }
 
 ]
