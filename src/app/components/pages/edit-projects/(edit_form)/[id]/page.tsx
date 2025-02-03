@@ -52,7 +52,6 @@ const EditForm = () => {
         handleSubmit,
         reset,
         control,
-        formState: { errors },
     } = useForm<Inputs>({defaultValues:  {
         id: '',
         title: '',

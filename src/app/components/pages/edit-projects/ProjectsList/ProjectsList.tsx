@@ -23,9 +23,11 @@ const ProjectsList = () => {
     
         
         {
-            allProjectsDocs?.map((projectDoc)=>{
+            allProjectsDocs?.map((projectDoc, index)=>{
                 return(
-                <SecondaryCard projectDoc={projectDoc} />
+                    <div key={index}>
+                        <SecondaryCard projectDoc={projectDoc} />
+                    </div>
             )})
         }
 
