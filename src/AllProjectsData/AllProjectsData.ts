@@ -4,6 +4,24 @@ export interface ProjectInterface {
 
 export const  AllProjectsData = [
     {
+        id: 'bb18',
+        category:'website',
+        title: 'Baitul Blog - Modern Blog Application',
+        description: 'Read latest, trending, most popular blogs. Search your choice. And Create your blogs',
+        skillsApplied: 'ReactJS, NodeJS, MongoDB',
+        image: '/images/projects/blog-app.png',
+        link: 'https://baitulblog.vercel.app/',
+    },
+    {
+        id: 'bms17',
+        category:'website',
+        title: 'Beneficiary Managemet System',
+        description: 'An application to maintain and track the record of the beneficiaries',
+        skillsApplied: 'ReactJS, NodeJS, MongoDB',
+        image: '/images/projects/bms-saylani.png',
+        link: 'https://bms-saylani.vercel.app/',
+    },
+    {
         id: 'FE16',
         category:'website',
         title: 'Furniture E-commerce',

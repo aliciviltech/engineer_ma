@@ -57,7 +57,7 @@ const Footer = () => {
                     <Link href={'#aboutSection'} className='hover:text-white transition-colors'> <i className='fa-solid fa-arrow-right mr-2'></i> About</Link>
                     <Link href={'#skillsSection'} className='hover:text-white transition-colors'> <i className='fa-solid fa-arrow-right mr-2'></i> Skills</Link>
                     <Link href={'#currentProjectSection'} className='hover:text-white transition-colors'> <i className='fa-solid fa-arrow-right mr-2'></i> Current Project</Link>
-                    <Link href={'#AllProjectsSection'} className='hover:text-white transition-colors'> <i className='fa-solid fa-arrow-right mr-2'></i> All Projects</Link>
+                    <Link href={'#MainProjectsSection'} className='hover:text-white transition-colors'> <i className='fa-solid fa-arrow-right mr-2'></i> Main Projects</Link>
                     <Link href={'#FeedbackSection'} className='hover:text-white transition-colors'> <i className='fa-solid fa-arrow-right mr-2'></i> Feedback</Link>
                 </div>
             </div>
