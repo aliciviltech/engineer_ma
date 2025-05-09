@@ -14,7 +14,6 @@ const Feedback = () => {
 
     // ===================== use states =============================
     const [submitBtn, setSubmitBtn] = useState('Submit');
-    const [removeBtn, setRemoveBtn] = useState('Remove');
     const [showLoader, setShowLoader] = useState(false);
 
 
@@ -146,7 +145,7 @@ const Feedback = () => {
                                                     {
                                                         user?.uid === doc.data().userUID && doc.data().userUID !== undefined ?
                                                             <div className="removeBtn">
-                                                                <button className='bg-red-500 absolute bottom-8 right-4 px-2 rounded-sm' onClick={() => removeComment(doc.id)}>{removeBtn}</button>
+                                                                <button className='bg-red-500 absolute bottom-8 right-4 px-2 rounded-sm' onClick={() => removeComment(doc.id)}>Remove</button>
                                                             </div>
                                                             :
                                                             <div></div>
