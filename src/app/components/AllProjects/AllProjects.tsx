@@ -131,6 +131,7 @@ const AllProjects = ({toggleAllProjects}:{toggleAllProjects?:()=>void}) => {
                                         <div className="description paragraphP3">
                                             {project.description}
                                         </div>
+                                        <div className="text-sm paragraphP3 ]"><span className='text-red-500'>Skills Applied:</span> {project.skillsApplied}</div>
                                     </div>
                                 </div>
                             </Link>

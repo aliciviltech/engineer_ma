@@ -124,11 +124,12 @@ const MainProjects = ({toggleAllProjects}:{toggleAllProjects?:()=>void}) => {
                                     <div className="image">
                                         <Image src={project.image} alt='projectThumbnail' width={400} height={400} />
                                     </div>
-                                    <div className="text">
+                                    <div className="text ">
                                         <div className="title headingH3">{project.title}</div>
                                         <div className="description paragraphP3">
                                             {project.description}
                                         </div>
+                                        <div className="text-sm paragraphP3 ]"><span className='text-red-500'>Skills Applied:</span> {project.skillsApplied}</div>
                                     </div>
                             </Link>
                         )

@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 
 const CurrentProject = () => {
-    const percentage = 70;
+    const percentage = 90;
     return (
         <div className='CurrentProject' id='currentProjectSection'>
 
