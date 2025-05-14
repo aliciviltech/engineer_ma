@@ -43,7 +43,7 @@ const SideBar: React.FC<SideBarProps> = ({ drawerRef, showNav, handleMenuDrawer,
                 expandSideBar &&
                 <div className="image">
                     <div className="myPicture">
-                        <img src="/images/myPicture.png" alt="myPic" />
+                        <img src="/images/mypic.png" alt="myPic" className='img' />
                     </div>
                 </div>
 

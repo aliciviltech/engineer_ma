@@ -108,7 +108,7 @@ const Footer = () => {
                             <input type="text" {...register('email', { required: true })} placeholder='Email' className='p-1 px-2 text-black rounded-sm w-full' />
                             <input type="text" {...register('phone', { required: true })} placeholder='Phone Number' className='p-1 px-2 text-black rounded-sm w-full' />
                             <textarea {...register('message', { required: true })} placeholder='Your Message' className='p-1 px-2 text-black rounded-sm w-full resize-none' />
-                            <input type="submit" value={sendBtn} className='bg-[var(--primaryColor)] text-white px-2 py-1 cursor-pointer rounded-sm' />
+                            <input type="submit" value={sendBtn} className='bg-[var(--primaryColor)] text-white px-2 py-1 cursor-pointer rounded-sm w-full' />
                             {modal &&
                                 <PrimaryModal text={`Hello ${userInputs && userInputs.name}!  Your message has been sent successfully`} setModal={setModal} />
                             }
