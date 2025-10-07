@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './AllProjects.css'
 import { AllProjectsData, ProjectInterface } from '@/AllProjectsData/AllProjectsData'
 import Image from 'next/image'
@@ -12,6 +12,12 @@ const AllProjects = ({toggleAllProjects}:{toggleAllProjects?:()=>void}) => {
     const [displayProjects, setDisplayProjects] = useState(AllProjectsData)
     const [toggleFilter, setToggleFilter] = useState(false);
     const [filteredValues,setFilteredValues] =  useState<string[]>([]);
+
+    // ================ sorting all projects =================
+    useEffect(()=>{
+        const sortedProjects = AllProjectsData.sort((a,b)=> a.sortOrder - b.sortOrder)
+        setDisplayProjects(sortedProjects)
+    },[])
 
     type Inputs = {
         website: string;

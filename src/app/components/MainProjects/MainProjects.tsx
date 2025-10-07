@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './MainProjects.css'
 import { AllProjectsData, ProjectInterface } from '@/AllProjectsData/AllProjectsData'
 import Image from 'next/image'
@@ -6,12 +6,18 @@ import Link from 'next/link'
 import { useForm, SubmitHandler } from "react-hook-form"
 
 
-const MainProjects = ({toggleAllProjects}:{toggleAllProjects?:()=>void}) => {
+const MainProjects = ({ toggleAllProjects }: { toggleAllProjects?: () => void }) => {
 
     const projectDisplayCount = 6;
-    const [displayProjects, setDisplayProjects] = useState(AllProjectsData.slice(0,projectDisplayCount))
+    const [displayProjects, setDisplayProjects] = useState(AllProjectsData.slice(0, projectDisplayCount))
     const [toggleFilter, setToggleFilter] = useState(false);
-    const [filteredValues,setFilteredValues] =  useState<string[]>([]);
+    const [filteredValues, setFilteredValues] = useState<string[]>([]);
+
+    // ========================= sorting projects ============================
+    useEffect(() => {
+        const sortedProjects = AllProjectsData.sort((a, b) => a.sortOrder - b.sortOrder)
+        setDisplayProjects(sortedProjects)
+    }, [])
 
     type Inputs = {
         website: string;
@@ -49,15 +55,15 @@ const MainProjects = ({toggleAllProjects}:{toggleAllProjects?:()=>void}) => {
                 })
             })
             const uniqueProjects: ProjectInterface[] = [...new Set(finalProjects)]
-            setDisplayProjects(uniqueProjects.slice(0,projectDisplayCount))
-        } else{
-            setDisplayProjects(AllProjectsData.slice(0,projectDisplayCount))
+            setDisplayProjects(uniqueProjects.slice(0, projectDisplayCount))
+        } else {
+            setDisplayProjects(AllProjectsData.slice(0, projectDisplayCount))
         }
         setToggleFilter(false)
     }
 
-    const removeFilters = ()=>{
-        setDisplayProjects(AllProjectsData.slice(0,projectDisplayCount))
+    const removeFilters = () => {
+        setDisplayProjects(AllProjectsData.slice(0, projectDisplayCount))
         setToggleFilter(false)
         setFilteredValues([])
     }
@@ -72,14 +78,14 @@ const MainProjects = ({toggleAllProjects}:{toggleAllProjects?:()=>void}) => {
             {/* ======================== filter form ====================== */}
 
             <div className="filterView mt-4 flex flex-col gap-4">
-                <div className="filterButton w-fit" onClick={()=>setToggleFilter(!toggleFilter)}><i className="fa-solid fa-sliders"></i> Filter</div>
+                <div className="filterButton w-fit" onClick={() => setToggleFilter(!toggleFilter)}><i className="fa-solid fa-sliders"></i> Filter</div>
                 {
-                    filteredValues.length>0 &&
+                    filteredValues.length > 0 &&
                     <div className="selectedFilters flex flex-wrap gap-2">
                         {
-                            filteredValues.map((value, index)=> <p key={index} className='border border-[var(--primaryColor)] rounded-3xl px-4'>{value}</p> )   
+                            filteredValues.map((value, index) => <p key={index} className='border border-[var(--primaryColor)] rounded-3xl px-4'>{value}</p>)
                         }
-                        <p className='border border-red-700 rounded-3xl px-4 cursor-pointer' onClick={removeFilters}> <i className='fa-solid fa-close'></i> remove all filters</p>       
+                        <p className='border border-red-700 rounded-3xl px-4 cursor-pointer' onClick={removeFilters}> <i className='fa-solid fa-close'></i> remove all filters</p>
                     </div>
                 }
                 {
@@ -118,19 +124,19 @@ const MainProjects = ({toggleAllProjects}:{toggleAllProjects?:()=>void}) => {
                     displayProjects.map((project) => {
                         return (
                             <Link className='projectCard ' key={project.id} href={project.link} target='_blank'>
-                                    <div className="cornerShape">
-                                        <i className='fa-solid fa-up-right-from-square'></i>
+                                <div className="cornerShape">
+                                    <i className='fa-solid fa-up-right-from-square'></i>
+                                </div>
+                                <div className="image">
+                                    <Image src={project.image} alt='projectThumbnail' width={400} height={400} />
+                                </div>
+                                <div className="text ">
+                                    <div className="title headingH3">{project.title}</div>
+                                    <div className="description paragraphP3">
+                                        {project.description}
                                     </div>
-                                    <div className="image">
-                                        <Image src={project.image} alt='projectThumbnail' width={400} height={400} />
-                                    </div>
-                                    <div className="text ">
-                                        <div className="title headingH3">{project.title}</div>
-                                        <div className="description paragraphP3">
-                                            {project.description}
-                                        </div>
-                                        <div className="text-sm paragraphP3 ]"><span className='text-red-500'>Skills Applied:</span> {project.skillsApplied}</div>
-                                    </div>
+                                    <div className="text-sm paragraphP3 ]"><span className='text-red-500'>Skills Applied:</span> {project.skillsApplied}</div>
+                                </div>
                             </Link>
                         )
                     })

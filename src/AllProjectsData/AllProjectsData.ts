@@ -1,10 +1,11 @@
 export interface ProjectInterface { 
-    id: string; category: string; title: string; description: string; skillsApplied: string; image: string; link: string; 
+    id: string; sortOrder:number; category: string; title: string; description: string; skillsApplied: string; image: string; link: string; 
 }
 
 export const  AllProjectsData = [
     {
         id: 'bb18',
+        sortOrder:100,
         category:'website',
         title: 'Baitul Blog - Modern Blog Application',
         description: 'Read latest, trending, most popular blogs. Search your choice. And Create your blogs',
@@ -14,6 +15,7 @@ export const  AllProjectsData = [
     },
     {
         id: 'bms17',
+        sortOrder:200,
         category:'website',
         title: 'Beneficiary Managemet System',
         description: 'An application to maintain and track the record of the beneficiaries',
@@ -22,7 +24,19 @@ export const  AllProjectsData = [
         link: 'https://bms-saylani.vercel.app/',
     },
     {
+        id: 'inv19',
+        sortOrder:300,
+        category:'website',
+        title: 'INVOZONE - Company Website',
+        description: 'A company website with a complete frontend work',
+        skillsApplied: 'ReactJS, Tailwindcss',
+        image: '/images/projects/invozone.png',
+        link: 'https://invozone-plhe.vercel.app/',
+    },
+    
+    {
         id: 'FE16',
+        sortOrder:500,
         category:'website',
         title: 'Furniture E-commerce',
         description: 'Quality material and best service available',
@@ -32,6 +46,7 @@ export const  AllProjectsData = [
     },
     {
         id: 'RB15',
+        sortOrder:600,
         category:'website',
         title: 'Resume Builder',
         description: 'Build your resume with your choice of template',
@@ -41,6 +56,7 @@ export const  AllProjectsData = [
     },
     {
         id: 'IAS13',
+        sortOrder:700,
         category:'website',
         title: 'INFONET App Store',
         description: 'INFONET App Store - Easy solution',
@@ -50,6 +66,7 @@ export const  AllProjectsData = [
     },
     {
         id:'SF12',
+        sortOrder:800,
         category:'website',
         title: 'Saylani(SMIT) Form',
         description: 'Saylani SMIT Form - Fill admission form, download id card, check results.',
@@ -59,6 +76,7 @@ export const  AllProjectsData = [
     },
     {
         id:'PV7',
+        sortOrder:900,
         category:'website',
         title: 'PET VET',
         description: 'PET VET - A Pet Care Website.',
@@ -66,9 +84,19 @@ export const  AllProjectsData = [
         image: '/images/projects/petVet.PNG',
         link: 'https://petvet-five.vercel.app/'
     },
-    
+    {
+        id: 'bindle20',
+        sortOrder:950,
+        category:'website',
+        title: 'My Bindle - Ecommerce Website',
+        description: 'A company website with a complete frontend work',
+        skillsApplied: 'ReactJS, Tailwindcss',
+        image: '/images/projects/myBindle.png',
+        link: 'https://my-bindle-theta.vercel.app/',
+    },
     {
         id:'TMA5',
+        sortOrder:1000,
         category:'app',
         title: 'Task Manager App',
         description: 'Task Manager Mobile Application.',
@@ -78,6 +106,7 @@ export const  AllProjectsData = [
     },
     {
         id:'YTC4',
+        sortOrder:1100,
         category:'website',
         title: 'YouTube Clone',
         description: 'Youtube Home Page Clone is Prepared.',
@@ -88,6 +117,7 @@ export const  AllProjectsData = [
    
     {
         id:'QW6',
+        sortOrder:1200,
         category:'app',
         title: 'QuizGrad WebApp',
         description: 'Learn new concepts for each question',
@@ -98,6 +128,7 @@ export const  AllProjectsData = [
 
     {
         id:'FDA9',
+        sortOrder:1300,
         category:'app',
         title: 'Food Delivery App',
         description: 'Food Delivery App - Your Favorite Food Delivery Partner',
@@ -107,6 +138,7 @@ export const  AllProjectsData = [
     },
     {
         id:'PWR8',
+        sortOrder:1400,
         category:'website',
         title: 'Portfolio with ReactJS',
         description: 'Portfolio website created with ReactJS - Your Opinion Matters',
@@ -117,6 +149,7 @@ export const  AllProjectsData = [
   
     {
         id: 'SW11',
+        sortOrder:1500,
         category:'website',
         title: 'Smoothies Website',
         description: 'Smoothies Website - Healthy and refreshing Diet',
@@ -128,6 +161,7 @@ export const  AllProjectsData = [
 
     {
         id:'EW3',
+        sortOrder:1600,
         category:'website',
         title: 'Educational Website',
         description: 'Learning platform of Generative Artificial Intelligence.',
@@ -139,6 +173,7 @@ export const  AllProjectsData = [
         
     {
         id: 'CWR10',
+        sortOrder:1700,
         category:'website',
         title: 'Cards With React',
         description: 'Professinals Cards with ReactJS',
@@ -148,6 +183,7 @@ export const  AllProjectsData = [
     },
     {
         id:'REW2',
+        sortOrder:1800,
         category:'website',
         title: 'Real Estate Website',
         description: 'Real Estate Website helps you to Manage Your Property with Ease.',
